@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ดีใจที่สุด 💗</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Rounded:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Noto Sans Thai Rounded', sans-serif;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #ffd9ec, #ffe6f4);
+            color: #ff5ca8;
+        }
+
+        h1 {
+            font-size: 9vw;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 6vw;
+        }
+    </style>
+</head>
+<body>
+    <h1>เย้! เธอบอกรักเราแล้ว 💖</h1>
+    <p>ดีใจที่สุดเลยน้า 💞</p>
+</body>
+</html>
