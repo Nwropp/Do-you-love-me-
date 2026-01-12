@@ -11,23 +11,92 @@
         body {
             text-align: center;
             font-family: 'Noto Sans Thai Rounded', sans-serif;
-            padding: 80px 20px;
-            background: linear-gradient(180deg, #ffd9ec, #ffe6f4);
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #ffd9ec, #ffe6f4, #ffccf0);
             color: #ff5ca8;
+            overflow: hidden; /* เพื่อป้องกันการเลื่อนถ้า GIF ใหญ่ */
         }
 
         h1 {
             font-size: 9vw;
             font-weight: 600;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite; /* เพิ่ม animation ให้หัวข้อเต้นตามหัวใจ */
         }
 
         p {
             font-size: 6vw;
+            margin-top: 10px;
+        }
+
+        .gif-container {
+            margin: 30px auto;
+            max-width: 80%;
+            border: 2px solid #ff99cc;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(255, 92, 168, 0.3); /* เพิ่มเงาให้ดูน่ารัก */
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* เพิ่ม particle effect สำหรับความรัก (หัวใจลอย) */
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff69b4;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
     <h1>เย้! เธอบอกรักเราแล้ว 💖</h1>
+    <div class="gif-container">
+        <img src="03455889-5494-4a0b-98ac-0dc6b96a0fd9.gif" alt="Love GIF">
+    </div>
     <p>ดีใจที่สุดเลยน้า 💞</p>
+
+    <!-- เพิ่มหัวใจลอยสำหรับเอฟเฟกต์น่ารัก -->
+    <div class="hearts"></div>
+
+    <script>
+        // สร้างหัวใจลอยแบบสุ่ม
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's'; // 3-6 วินาที
+            document.querySelector('.hearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+
+        setInterval(createHeart, 300); // สร้างหัวใจทุก 300ms
+    </script>
 </body>
 </html>
